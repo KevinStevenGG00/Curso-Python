@@ -16,3 +16,4 @@
 ##importar una funcion dentro de una carpeta ubicada a la par
 from funciones.saludar import saludito
 resultado1 = saludito("Clarita")
+print(resultado1)

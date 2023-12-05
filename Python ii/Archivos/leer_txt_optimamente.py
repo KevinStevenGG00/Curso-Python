@@ -1,3 +1,3 @@
-with open("Archivos\\texto_kevin.txt"):
+with open("archivos\\texto_kevin.txt"):
     print("hola")
     

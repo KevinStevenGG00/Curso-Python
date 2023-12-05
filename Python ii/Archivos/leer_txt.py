@@ -1,4 +1,4 @@
-archivo = open("Archivos\\texto_kevin.txt",encoding="UTF-8") #abrir el archivo, poniendo utf8 para caracteres adicionales
+archivo = open("archivos\\texto_kevin.txt",encoding="UTF-8") #abrir el archivo, poniendo utf8 para caracteres adicionales
 #grupo1
 #archivo_leido = archivo.read()              #leer el archivo
 #print(archivo_leido)                   
