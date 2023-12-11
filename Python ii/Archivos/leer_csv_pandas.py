@@ -1,11 +1,14 @@
 import pandas as pd
 #leemos el archivo csv
-df = pd.read_csv("archivos\\datos.csv") #agregamos encabezado, desplazamos hacia abajo
+df = pd.read_csv("archivos\\datos.csv") 
 print(df)
 print("\n")
 
-#obteniendo los datos de la columna "nombre"
+#agregamos encabezado, desplazamos hacia abajo
 df0 = pd.read_csv("archivos\\datos.csv",names=["name","lastname","age"])
+print(df0)
+print("\n")
+#obteniendo los datos de la columna "nombre"
 nombres = df0["name"]      #dataframe
 print(nombres)
 print("\n")
@@ -41,6 +44,56 @@ print("\n")
 primera_fila = df.tail(2)
 print(primera_fila)
 print("\n")
+
+#accediendo a la cantidad de filas y columnas con shape
+filas_columnas = df.shape      #resultado (filas,columnas)
+print(filas_columnas)
+
+#desempaquetar primera forma
+filas0 = filas_columnas[0]
+columnas0 = filas_columnas[1]
+print(filas0)
+print(columnas0)
+print("\n")
+#desempaquetar segunda forma (optimamente)
+filas1, columnas1 = df.shape
+print(filas1)
+print(columnas1)
+print("\n")
+
+#Obteniendo data estadística del dataframe
+df_info = df.describe()
+print(df_info)
+print("\n")
+
+#accediendo a un elemento específico del df con loc
+elemento_especifico0 = df.loc[3,"nombre"]
+print(elemento_especifico0)
+print("\n")
+
+#accediendo a un elemento con iloc
+elemento_especifico1 = df.iloc[1,2] #[columna,fila]
+print(elemento_especifico1)
+print("\n")
+
+#todas las filas de una columna
+nombres = df.iloc[:,0]
+print(nombres)
+print("\n")
+
+#accediendo a una fila
+fila = df.loc[1,:]
+print(fila)
+print("\n")
+
+#accediendo a filas con edad mayor a 30
+mayor_que_30 = df.loc[df["edad"]>30,:]
+menor_que_30 = df.loc[df["edad"]<30,:]
+print(mayor_que_30)
+print("\n")
+print(menor_que_30)
+print("\n")
+
 
 #############SLICING##############
 cadena = "Kevin"
