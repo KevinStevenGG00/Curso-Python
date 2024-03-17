@@ -1,28 +1,19 @@
-class Estudiante:
-    def __init__(self, nombre, edad, grado):
+class Persona:
+    def __init__(self, nombre, edad):
         self.nombre = nombre
         self.edad = edad
-        self.grado = grado
-    def datos(self):
-        print(f"""
-              \nLos datos del estudiante son: \n\n
-              Nombre: {self.nombre}\n
-              Edad: {self.edad}\n 
-              Grado: {self.grado}\n
-              """)
-    def accion(self):
-        print(f"{self.nombre} está estudiando...")
+    def datosPersona(self):
+        print(f"La persona se llama {self.nombre} y tiene {self.edad} años")
         
-nombre = input("Nombre: ")
-edad = input("Edad: ")
-grado = input("Grado: ")
+class Estudiante(Persona):
+    def __init__(self, nombre, edad, grado):
+        super().__init__(nombre, edad)
+        self.grado =grado
+    def datosEstudiante(self):
+        print(f"El estudiante tiene el grado de {self.grado}")
+        
+estudiante1 = Estudiante("Kevin",23,"Bachiller")
+print(estudiante1.grado)
 
-estudiante1 = Estudiante(nombre, edad, grado)
-
-estudiante1.datos()
-
-while True:
-    accion = input("Quieres que estudie?(s/n): ")
-    if (accion.lower() == "s"):
-        estudiante1.accion()
-        break
+estudiante1.datosPersona()
+estudiante1.datosEstudiante()

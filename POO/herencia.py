@@ -4,7 +4,7 @@ class Persona:
         self.edad = edad
         self.nacionalidad = nacionalidad
     def hablar(self):
-        print(f"Hola soy {self.nombre} estoy hablando")
+        print(f"Hola papay soy {self.nombre} toy hablando")
         
         
 class Empleado(Persona):

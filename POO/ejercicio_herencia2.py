@@ -1,19 +1,20 @@
-class Persona:
-    def __init__(self, nombre, edad):
-        self.nombre = nombre
-        self.edad = edad
-    def datosPersona(self):
-        print(f"La persona se llama {self.nombre} y tiene {self.edad} años")
-        
-class Estudiante(Persona):
-    def __init__(self, nombre, edad, grado):
-        super().__init__(nombre, edad)
-        self.grado =grado
-    def datosEstudiante(self):
-        print(f"El estudiante tiene el grado de {self.grado}")
-        
-estudiante1 = Estudiante("Kevin",23,"Bachiller")
-print(estudiante1.grado)
+class Animal:
+    def comer(self):
+        print("Este animal puede comer")
 
-estudiante1.datosPersona()
-estudiante1.datosEstudiante()
+class Mamifero(Animal):
+    def amamantar(self):
+        print("Este animal puede amamantar")
+
+class Ave(Animal):
+    def volar(self):
+        print("Este animal puede volar")
+
+class Muercielago(Mamifero,Ave):
+    pass
+
+murcielago1 = Muercielago()
+
+murcielago1.comer()
+murcielago1.volar()
+murcielago1.amamantar()
